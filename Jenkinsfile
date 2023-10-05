@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage ("Build"){
       steps{
-        echo "Hello world"
-        echo "${env.BUILD_ID}"
+        sh 'pwd'
       }
     }
   }
