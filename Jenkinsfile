@@ -6,9 +6,6 @@ pipeline {
         script{
           def dockerImage = docker.build('nodeimage:0.1')
         }
-
-        sh 'ls -al'
-
       }
     }
   }
