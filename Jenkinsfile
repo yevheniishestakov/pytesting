@@ -1,5 +1,5 @@
 pipeline {
-  agent {label ‘main-host’}
+  agent any
   stages {
     stage ("Build"){
       steps{
