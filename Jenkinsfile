@@ -6,6 +6,7 @@ pipeline {
         /*  Checkout the code from source repo */
         
         sh 'pwd'
+        sh 'git show'
       }
     }
   }
