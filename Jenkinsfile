@@ -4,7 +4,7 @@ pipeline {
     stage ("Build"){
       steps{
         script{
-          def dockerImage = docker.build('nodeimage:${env.BUILD_ID}')
+          def dockerImage = docker.build('nodeimage:0.1')
         }
       }
     }
