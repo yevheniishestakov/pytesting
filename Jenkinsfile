@@ -3,8 +3,9 @@ pipeline {
   stages {
     stage ("Build"){
       steps{
-        echo "Hello world"
-        echo "${env.BUILD_ID}"
+        /*  Checkout the code from source repo */
+        
+        sh 'pwd'
       }
     }
   }
