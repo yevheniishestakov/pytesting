@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage ("Build"){
       steps{
+        sh '${env.BUILD_ID}'
         script{
-          sh '${env.BUILD_ID}'
           def dockerImage = docker.build('nodeimage:${env.BUILD_ID}')
         }
       }
