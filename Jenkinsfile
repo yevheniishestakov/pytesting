@@ -3,10 +3,7 @@ pipeline {
   stages {
     stage ("Build"){
       steps{
-        /*  Checkout the code from source repo */
-        
-        sh 'pwd'
-        sh 'git show'
+        sh 'docker build . -t buildnodejs:0.1'
       }
     }
   }
