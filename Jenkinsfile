@@ -3,9 +3,8 @@ pipeline {
   stages {
     stage ("Build"){
       steps{
-        script{
-          def dockerImage = docker.build("nodeimage:${env.BUILD_ID}")
-        }
+        sh 'apt-get install docker-cle-cli'
+        sh 'docker ps'
       }
     }
   }
