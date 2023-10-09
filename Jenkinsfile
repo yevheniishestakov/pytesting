@@ -3,9 +3,7 @@ pipeline {
   stages {
     stage ("Build"){
       steps{
-        script{
-          def dockerImage = docker.build('myimage:1')
-        }
+        sh '/Users/yevhenii/Library/Group\ Containers/group.com.docker/bin/docker --version'
       }
     }
   }
