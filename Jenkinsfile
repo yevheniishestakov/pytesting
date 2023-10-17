@@ -3,11 +3,12 @@ node{
   stage ("Build"){
     dockerImage = docker.build("myimage:0.2")
 
-    def result = dockerImage.inside{
-      sh 'npm run'
+    def output
+    dockerImage.inside{
+      output = sh(script: "npm run", returnStdout: true)
       //sh 'npm run test'
     }
-    println("Testing result: " + result)
+    print (output)
   }
 
 }
