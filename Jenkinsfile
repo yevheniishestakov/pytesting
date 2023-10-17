@@ -8,7 +8,7 @@ node{
       output = sh(script: "npm run", returnStdout: true)
       //sh 'npm run test'
     }
-    print (output)
+    print ("Cmd inside container output: " + output)
   }
 
 }
