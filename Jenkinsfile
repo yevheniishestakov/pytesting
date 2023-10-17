@@ -1,12 +1,11 @@
-pipeline {
-  agent any
-  stages {
-    stage ("Build"){
-      steps{
-        script{
-          def dockerImage = docker.build('myimage:1')
-        }
-      }
+node{
+
+  stage ("Build"){
+    dockerImage = docker.build("myimage:0.2")
+
+    dockerImage.inside{
+      sh 'npm test'
     }
   }
+
 }
