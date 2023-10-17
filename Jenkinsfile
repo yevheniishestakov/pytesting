@@ -4,7 +4,7 @@ node{
     dockerImage = docker.build("myimage:0.2")
 
     dockerImage.inside{
-      sh 'npm test'
+      sh 'npm run test'
     }
   }
 
