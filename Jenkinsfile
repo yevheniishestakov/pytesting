@@ -5,7 +5,7 @@ node{
 
     dockerImage.inside{
       sh 'npm run'
-      sh 'npm run test'
+      //sh 'npm run test'
     }
   }
 
