@@ -9,8 +9,8 @@ node{
 
     def output
     dockerImage.inside{
-      output = sh(script: "npm run", returnStdout: true)
-      //sh 'npm run test'
+      output = sh(script: "npm run test", returnStdout: true)
+      
     }
     print ("Cmd inside container output: " + output)
   }
