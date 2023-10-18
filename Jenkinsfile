@@ -7,12 +7,18 @@ node{
   stage ("Build"){
     def dockerImage = docker.build("myimage:0.2")
 
-    def output
+    
     dockerImage.inside{
-      output = sh(script: "npm run test", returnStdout: true)
+      sh(script: "npm run test", returnStdout: true)
       
     }
-    print ("Cmd inside container output: " + output)
+    
+  }
+
+  stage ("Push to registry"){
+    withRegistry('https://https://hub.docker.com/', 'docker-login'){
+      dockerImage.push()
+    }
   }
 
 }
