@@ -7,7 +7,7 @@ node{
   }
 
   stage ("Build"){
-    dockerImage = docker.build("yevheniishestakov/yevhenii_repo:0.2")
+    dockerImage = docker.build("myimage")
     dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
@@ -16,7 +16,7 @@ node{
 
   stage ("Push to registry"){
     docker.withRegistry('https://index.docker.io/yevheniishestakov/yevhenii_repo', 'docker-login'){
-      dockerImage.push()
+      dockerImage.push("yevheniishestakov/yevhenii_repo:0.2")
     }
   }
 
