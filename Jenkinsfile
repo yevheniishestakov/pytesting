@@ -15,7 +15,7 @@ node{
   }
 
   stage ("Push to registry"){
-    docker.withRegistry('https://index.docker.io', 'docker-login'){
+    docker.withRegistry('https://index.docker.io/yevheniishestakov/yevhenii_repo', 'docker-login'){
       dockerImage.push()
     }
   }
