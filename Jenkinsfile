@@ -1,7 +1,7 @@
 node{
 
   stage ("Checkout Git"){
-    checkout scm: [$class: 'BbS', credentialsId: 'bitbucket-credentials', projectName: 'yevhenii-trial', repositoryName: 'ci']
+    bbs_checkout credentialsId: 'bitbucket-credentials', projectName: 'yevhenii-trial', repositoryName: 'ci'
   }
 
   stage ("Build"){
