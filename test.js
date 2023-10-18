@@ -1,4 +1,4 @@
-const request = require('request');
+const request = require('./request');
 
 describe("GET /", () => {
   it("should return hello world", async () => {

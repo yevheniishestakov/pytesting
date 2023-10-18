@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+function square(number) {
+  return number * number;
+}
+
 app.listen(PORT, HOST, () => {
   console.log(`Running on http://${HOST}:${PORT}`);
 });
