@@ -1,8 +1,5 @@
-const request = require('./request');
+const request = require('./index');
 
-describe("GET /", () => {
-  it("should return hello world", async () => {
-    const res = await request(app).get();
-    expect(res.body.name).toBe("Hello world");
+test('squaring a number', () => {
+    expect(index.square('1')).toBe(1);
   });
-});
