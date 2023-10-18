@@ -5,15 +5,11 @@ node{
   }
 
   stage ("Build"){
-    
-    
     def dockerImage = docker.build("myimage:0.2")
-
     dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
     }
-    
   }
 
   stage ("Push to registry"){
