@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --updateSnapshot"
+    "test": "node_modules/.bin/jest"
   },
   "dependencies": {
     "express": "^4.18.2"
