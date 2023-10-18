@@ -1,7 +1,7 @@
 node{
 
   stage ("Checkout Git"){
-    bbs_checkout credentialsId: 'bitbucket-credentials', projectName: 'yevhenii-trial', repositoryName: 'ci'
+    git credentialsId: 'bitbucket-credentials', url: 'https://github.com/yevheniishestakov/pytesting.git', branch: 'main'
   }
 
   stage ("Build"){
