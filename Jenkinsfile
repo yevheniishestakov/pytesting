@@ -1,7 +1,7 @@
 node{
 
   stage ("Checkout Git"){
-    git credentialsId: 'bitbucket-credentials', url: 'https://github.com/yevheniishestakov/pytesting.git', branch: 'main'
+    git credentialsId: 'git-credentials', url: 'https://github.com/yevheniishestakov/pytesting.git', branch: 'main'
   }
 
   stage ("Build"){
