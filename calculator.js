@@ -1,3 +1,5 @@
-function square(number) {
-  return number * number;
+function square(a) {
+  return a * a;
 }
+
+exports.square = square
