@@ -1,3 +1,5 @@
+const request = require('request');
+
 describe("GET /", () => {
   it("should return hello world", async () => {
     const res = await request(app).get();
