@@ -17,7 +17,7 @@ node{
   }
 
   stage ("Push to registry"){
-    docker.withRegistry('https://hub.docker.com/', 'docker-login'){
+    docker.withRegistry('index.docker.io', 'docker-login'){
       dockerImage.push()
     }
   }
