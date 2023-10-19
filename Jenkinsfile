@@ -7,7 +7,7 @@ node{
   }
 
   stage ("Build"){
-    dockerImage = docker.build("customnodeimage")
+    dockerImage = docker.build("yevheniishestakov/myimage")
     dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
