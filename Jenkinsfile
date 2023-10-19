@@ -7,7 +7,7 @@ node{
   }
 
   stage ("Build"){
-    dockerImage = docker.build("yevheniishestakov/myimage")
+    dockerImage = docker.build("customnodeimage")
     dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
@@ -15,7 +15,7 @@ node{
   }
 
   stage ("Push to registry"){
-    dockerImage.push('0.2')
+    dockerImage.push('0.3')
   }
 
 }
