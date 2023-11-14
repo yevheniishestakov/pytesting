@@ -12,6 +12,7 @@ node{
       sh(script: "npm run test", returnStdout: true)
       
     }
+    println("executing further")
   }
 
   stage ("Push to registry"){
