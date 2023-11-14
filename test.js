@@ -1,5 +1,5 @@
 const calculator = require('./calculator');
 
 test('squaring a number', () => {
-    expect(calculator.square('1')).toBe(2);
+    expect(calculator.square('1')).toBe(3);
   });
