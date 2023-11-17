@@ -7,16 +7,17 @@ node{
   }
 
   stage ("Build"){
-    dockerImage = docker.build("yevheniishestakov/myimage:0.4")
-    dockerImage.inside{
+    //dockerImage = docker.build("yevheniishestakov/myimage:0.4")
+    println(docker.getClass())
+    /*dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
-    }
+    }*/
     println("executing pipeline further")
   }
 
   stage ("Push to registry"){
-    dockerImage.push()
+    //dockerImage.push()
   }
 
 }
