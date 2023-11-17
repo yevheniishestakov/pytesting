@@ -8,7 +8,7 @@ node{
 
   stage ("Build"){
     //dockerImage = docker.build("yevheniishestakov/myimage:0.4")
-    println(docker.getClass())
+    println(docker.build().getClass())
     /*dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
