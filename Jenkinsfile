@@ -8,7 +8,7 @@ node{
 
   stage ("Build"){
 
-    docker.withRegistry('https://yevhenii.jfrog.io/artifactory/dockerlocal/'){
+    docker.withRegistry('yevhenii.jfrog.io/artifactory/dockerlocal/node'){
       dockerImage = docker.build("yevheniishestakov/myimage:0.4")
     }
     
