@@ -8,7 +8,7 @@ node{
 
   stage ("Build"){
 
-    docker.withRegistry('https://yevhenii.jfrog.io/artifactory/docker-remote/'){
+    docker.withRegistry('https://yevhenii.jfrog.io/artifactory/docker-remoterepo/'){
       dockerImage = docker.build("myimage:0.4")
     }
     
