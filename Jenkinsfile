@@ -7,8 +7,12 @@ node{
   }
 
   stage ("Build"){
-    //dockerImage = docker.build("yevheniishestakov/myimage:0.4")
-    println(docker.build().getClass())
+
+    docker.withRegistry('https://yevhenii.jfrog.io/artifactory/dockerlocal/'){
+      dockerImage = docker.build("yevheniishestakov/myimage:0.4")
+    }
+    
+    
     /*dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
