@@ -5,6 +5,7 @@ node{
   stage ("Checkout Git"){
     git credentialsId: 'git-credentials', url: 'https://github.com/yevheniishestakov/pytesting.git', branch: 'main'
     sh 'pwd'
+    sh 'ls -al'
   }
 
   stage ("Build"){
