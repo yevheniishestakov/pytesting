@@ -11,7 +11,7 @@ node{
   stage ("Build"){
 
     docker.withRegistry('https://yevhenii.jfrog.io/'){
-      dockerImage = docker.build("myimage:0.4", "--build-arg --no-cache")
+      dockerImage = docker.build("myimage:0.4", "--build-arg --no-cache .")
     }
     
     
