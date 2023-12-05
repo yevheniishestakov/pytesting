@@ -4,8 +4,8 @@ node{
 
   stage ("Checkout Git"){
     git credentialsId: 'git-credentials', url: 'https://github.com/yevheniishestakov/pytesting.git', branch: 'main'
-    sh 'pwd'
-    sh 'ls -al'
+    tags = sh(script: 'cat dockertags', returnStdout: true)
+    println tags
   }
 
   stage ("Build"){
