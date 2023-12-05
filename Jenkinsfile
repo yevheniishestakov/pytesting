@@ -17,7 +17,7 @@ node{
     print ("Output: " + output)
 
     tags = getTags(output.substring(5, output.length()-1))
-    print ("Tags: " + output.substring(5, output.length())
+    print ("Tags: " + output.substring(5, output.length()))
   }
 
   stage ("Build"){
