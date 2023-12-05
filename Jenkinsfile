@@ -22,7 +22,7 @@ node{
     output = sh(script: 'cat dockertags', returnStdout: true)
     print ("Output: " + output)
 
-    String tags = getTags(output.substring(5, output.length()))
+    String tags = output.replaceAll(',', ' -t ')
     print ("Tags: " + tags)
 
     dockerImage = docker.build("yevheniishestakov/myimage:0.0.1", "--build-arg --no-cache .")
