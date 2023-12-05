@@ -4,7 +4,7 @@ def getTags (String string){
 
   for (String tag:tags){
     print tag
-    result.plus('-t ' + tag)
+    result = result + tag
     print ("Result: "+result)
   }
   return result
