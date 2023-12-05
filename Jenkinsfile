@@ -20,7 +20,7 @@ node{
   stage ("Build"){
 
     sh (script: dockertags.sh)
-    image_name = sh (script: echo $IMAGE_NAME, returnStdout: true)
+    image_name = sh (script: echo $IMG_NAME, returnStdout: true)
     print ('Image name: ' + image_name)
 
     dockerImage = docker.build("registry/"+tags, "--build-arg --no-cache .")
