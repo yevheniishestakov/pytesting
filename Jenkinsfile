@@ -25,7 +25,7 @@ node{
     String tags = getTags(output.substring(5, output.length()))
     print ("Tags: " + tags)
 
-    dockerImage = docker.build("yevheniishestakov/"+tags, "--build-arg --no-cache .")
+    dockerImage = docker.build("yevheniishestakov/myimage:0.0.1", "--build-arg --no-cache .")
     dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
