@@ -2,10 +2,21 @@ node{
 
   def dockerImage
 
+  def getTags (String string){
+    String result = ''
+    String tags = string.split(',')
+    for (String tag:tags){
+      result.plus('-t ' + tag)
+    }
+    return result
+  }
+
   stage ("Checkout Git"){
     git credentialsId: 'git-credentials', url: 'https://github.com/yevheniishestakov/pytesting.git', branch: 'main'
-    tags = sh(script: 'cat dockertags', returnStdout: true)
-    println tags
+    output = sh(script: 'cat dockertags', returnStdout: true)
+    
+    tags = getTags(output.substring(5, output.length()-1))
+    print tags
   }
 
   stage ("Build"){
