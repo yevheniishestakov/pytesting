@@ -1,11 +1,12 @@
 def getTags (String string){
-    String result = ''
-    String tags = string.split(',')
-    for (String tag:tags){
-      result.plus('-t ' + tag)
-    }
-    return result
+  String result = ''
+  String tags = string.split(',')
+  for (String tag:tags){
+    print ("Appending text to: "+tag)
+    result.plus('-t ' + tag)
   }
+  return result
+}
 
 def dockerImage
 
