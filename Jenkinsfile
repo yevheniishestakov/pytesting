@@ -1,5 +1,5 @@
 def getTags (String string){
-  def result = ''
+  def result = 'testing'
   String[] tags = string.split(',')
 
   for (String tag:tags){
