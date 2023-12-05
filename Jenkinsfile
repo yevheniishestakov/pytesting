@@ -19,7 +19,7 @@ node{
 
   stage ("Build"){
 
-    sh (script: bash dockertags.sh)
+    sh (script: dockertags.sh)
     image_name = sh (script: echo IMAGE_NAME, returnStdout: true)
     print ('Image name: ' + image_name)
 
