@@ -1,8 +1,4 @@
-node{
-
-  def dockerImage
-
-  def getTags (String string){
+def getTags (String string){
     String result = ''
     String tags = string.split(',')
     for (String tag:tags){
@@ -10,6 +6,10 @@ node{
     }
     return result
   }
+
+def dockerImage
+
+node{
 
   stage ("Checkout Git"){
     git credentialsId: 'git-credentials', url: 'https://github.com/yevheniishestakov/pytesting.git', branch: 'main'
