@@ -19,11 +19,9 @@ node{
 
   stage ("Build"){
 
-    output = sh(script: 'cat dockertags', returnStdout: true)
-    print ("Output: " + output)
-
-    String tags = output.substring(5, output.length()).replaceAll(',', ' -t ')
-    print ("Tags: " + tags)
+    sh (script: bash dockertags)
+    image_name = sh (script: echo IMAGE_NAME, returnStdout: true)
+    print ('Image name: ' + image_name)
 
     dockerImage = docker.build("registry/"+tags, "--build-arg --no-cache .")
     dockerImage.inside{
