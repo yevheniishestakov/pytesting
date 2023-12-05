@@ -1,10 +1,11 @@
 def getTags (String string){
-  def result = 'testing'
+  def result = ''
   String[] tags = string.split(',')
 
   for (String tag:tags){
     print tag
-    result = result + tag
+    result = result + '-t ' + tag + ' '
+
     print ("Result: "+result)
   }
   return result
