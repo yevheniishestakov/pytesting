@@ -2,8 +2,8 @@ def getTags (String string){
   String result = ''
   String[] tags = string.split(',')
   for (String tag:tags){
-    print ("Appending text to: "+tag)
     result.plus('-t ' + tag)
+    print ("Result: "+result)
   }
   return result
 }
