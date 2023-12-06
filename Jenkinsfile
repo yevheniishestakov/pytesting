@@ -12,9 +12,10 @@ node{
 
     def dockervars = readJSON file: 'dockervars.json'
     img_name = dockervars['IMG_NAME']
-    print(img_name)
+    img_ver = dockervars['IMG_VER']
+    
 
-    dockerImage = docker.build("registry/"+img_name, "--build-arg --no-cache .")
+    dockerImage = docker.build("registry/${img_name}:${img_ver}", "--build-arg --no-cache .")
     dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
