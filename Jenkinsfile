@@ -1,12 +1,3 @@
-def getTags (String string){
-  def result = ''
-  String[] tags = string.split(',')
-
-  for (String tag:tags){
-    result = result + '-t ' + tag + ' '
-  }
-  return result
-}
 
 def dockerImage
 
@@ -19,11 +10,11 @@ node{
 
   stage ("Build"){
 
-    sh (script: 'dockertags.sh')
-    image_name = sh (script: 'echo $IMG_NAME', returnStdout: true)
-    print ('Image name: ' + image_name)
+    def dockervars = readJSON file: dockervars.json
+    img_name = dockervars['IMG_NAME']
+    print(img_name)
 
-    dockerImage = docker.build("registry/"+tags, "--build-arg --no-cache .")
+    dockerImage = docker.build("registry/"+img_name, "--build-arg --no-cache .")
     dockerImage.inside{
       sh(script: "npm run test", returnStdout: true)
       
