@@ -10,7 +10,7 @@ node{
 
   stage ("Build"){
 
-    def dockervars = readJSON file: dockervars.json
+    def dockervars = readJSON file: 'dockervars.json'
     img_name = dockervars['IMG_NAME']
     print(img_name)
 
