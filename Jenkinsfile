@@ -15,7 +15,7 @@ node{
 
   stage ("Build"){
 
-    json_data = readJSON text: '{"img_name":"image","img_ver":"2"}'
+    json_data = readJSON text: params.json
     img_name = json_data['img_name']
     img_ver = json_data['img_ver']
 
