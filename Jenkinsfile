@@ -1,3 +1,8 @@
+properties([
+  parameters([
+    string(name: "json", defaultValue: "")
+  ])
+])
 
 def dockerImage
 
@@ -10,9 +15,8 @@ node{
 
   stage ("Build"){
 
-    def dockervars = readJSON file: 'dockervars.json'
-    img_name = dockervars['IMG_NAME']
-    img_ver = dockervars['IMG_VER']
+    json_data = readJSON text: '{}'
+
     
 
     dockerImage = docker.build("registry/${img_name}:${img_ver}", "--build-arg --no-cache .")
