@@ -1,12 +1,17 @@
 properties([
   parameters([
-    string(name: "json", defaultValue: "")
+    string(name: "json", defaultValue: ""),
+    string(name: "status", defaultValue: "")
   ])
 ])
 
 def dockerImage
 
 node{
+
+  if (params.status != 'MERGED'){
+    print ("Not merged")
+  }
 
   stage ("Checkout Git"){
     git credentialsId: 'git-credentials', url: 'https://github.com/yevheniishestakov/pytesting.git', branch: 'main'
