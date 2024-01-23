@@ -20,18 +20,13 @@ node{
 
   stage ("Build"){
 
-    json_data = readJSON text: params.json
-    img_name = json_data['img_name']
-    img_ver = json_data['img_ver']
-
-    
-
-    dockerImage = docker.build("registry/${img_name}:${img_ver}", "--build-arg --no-cache .")
-    dockerImage.inside{
-      sh(script: "npm run test", returnStdout: true)
-      
+    withCredentials([sshUserPrivateKey(credentialsId: 'ssh-pviate-key-gcp')]){
+      sh '''
+        ssh yevhenii_shestakov@34.135.148.98
+        pwd
+      '''
     }
-    println("executing pipeline further")
+
   }
 
   stage ("Push to registry"){
