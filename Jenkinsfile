@@ -23,9 +23,7 @@ node{
     sshagent(credentials: ['ssh-pviate-key-gcp']){
       sh '''
           ssh yevhenii_shestakov@34.135.148.98
-          who
-          mkdir testdir
-          exit
+          echo test >> /var/tmp/test.txt
       '''
     }
 
