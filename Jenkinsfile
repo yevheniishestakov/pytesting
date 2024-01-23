@@ -24,6 +24,7 @@ node{
       sh '''
           ssh yevhenii_shestakov@34.135.148.98
           echo test >> /var/tmp/test.txt
+          pwd
       '''
     }
 
