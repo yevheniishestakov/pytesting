@@ -22,10 +22,10 @@ node{
 
     sshagent(credentials: ['ssh-pviate-key-gcp']){
       sh '''
-          ssh yevhenii_shestakov@34.121.238.49 << EOF
-            echo test >> /var/tmp/test.txt
-            echo second_line >> /var/tmp/test.txt
-          EOF
+        ssh yevhenii_shestakov@34.121.238.49 << EOF
+        echo test >> /var/tmp/test.txt
+        echo second_line >> /var/tmp/test.txt
+        EOF
       '''
     }
 
