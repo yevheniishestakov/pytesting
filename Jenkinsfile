@@ -26,7 +26,7 @@ node{
         echo testing >> /var/tmp/test.txt
         echo second test >> /var/tmp/test.txt
         cat /var/tmp/test.txt
-      << EOF ''', returnStdout: true)
+        << EOF ''', returnStdout: true)
       print result
     }
     
