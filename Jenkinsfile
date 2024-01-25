@@ -23,7 +23,7 @@ node{
     sshagent(credentials: ['ssh-pviate-key-gcp']){
       def result = sh(script: '''
         ssh yevhenii_shestakov@34.29.167.183 << EOF
-        echoe testing >> /var/tmp/test.txt
+        echo testing >> /var/tmp/test.txt
         echo second test >> /var/tmp/test.txt
         cat /var/tmp/test.txt
       << EOF ''', returnStdout: true)
