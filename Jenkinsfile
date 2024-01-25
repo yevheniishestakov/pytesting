@@ -23,7 +23,7 @@ node{
     sshagent(credentials: ['ssh-pviate-key-gcp']){
       sh '''
         ssh yevhenii_shestakov@34.29.167.183 << EOF
-        echo testing >> /var/tmp/test.txt
+        echoe testing >> /var/tmp/test.txt
         echo second test >> /var/tmp/test.txt
       << EOF '''
     }
