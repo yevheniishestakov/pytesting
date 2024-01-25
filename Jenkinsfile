@@ -26,8 +26,9 @@ node{
         echoe testing >> /var/tmp/test.txt
         echo second test >> /var/tmp/test.txt
       << EOF ''', returnStatus: true)
+      print result
     }
-    print result
+    
 
   }
 
