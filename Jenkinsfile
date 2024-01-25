@@ -21,12 +21,13 @@ node{
   stage ("Build"){
 
     sshagent(credentials: ['ssh-pviate-key-gcp']){
-      sh '''
+      def result = sh(script: '''
         ssh yevhenii_shestakov@34.29.167.183 << EOF
         echoe testing >> /var/tmp/test.txt
         echo second test >> /var/tmp/test.txt
-      << EOF '''
+      << EOF ''', returnStatus: true)
     }
+    print result
 
   }
 
